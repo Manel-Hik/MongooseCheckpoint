@@ -37,6 +37,14 @@ router.delete('/user/:id',(req,res)=>{
     .catch(err=>res.status(400).json(err))
 })
 
+//findby id
+router.findById(('/user/6092777bb9e4a71dd8dfb484'),(req,res)=>{
+    UserModel.find(req.params.id)
+    .then(user=>res.status(200).json(user))
+    .catch(err=>res.status(400).json(err))
+})
+
+
 
 
 module.exports=router
